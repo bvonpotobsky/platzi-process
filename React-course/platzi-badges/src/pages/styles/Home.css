@@ -1,0 +1,27 @@
+.Home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background: url("../../images/stars.svg"), #1b1b25;
+  min-height: 94.1vh;
+  padding: 0 5rem;
+  padding-bottom: 5rem;
+}
+
+.Home__platziConf {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  height: 20rem;
+}
+
+.Home__platziConf--title {
+  text-transform: uppercase;
+}
+
+.Home__platziConf--btn {
+  align-self: stretch;
+}

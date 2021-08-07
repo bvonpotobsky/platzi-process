@@ -1,0 +1,21 @@
+.NotFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../images/stars.svg"), #1b1b25;
+  min-height: 94.1vh;
+}
+
+.NotFound__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.NotFound__container--title {
+  color: #ffffff;
+}
+
+.NotFound__img {
+  width: 35rem;
+}
