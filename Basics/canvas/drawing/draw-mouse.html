@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse drawing</title>
+  </head>
+  <body>
+    <style>
+      html {
+        padding: 0;
+        margin: 0;
+        background-color: gray;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+      }
+      .myCanvas {
+        background-color: black;
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+
+      .btn {
+        padding: 0.5rem 1.2rem;
+        border: none;
+        font-size: 1.6rem;
+        cursor: pointer;
+      }
+    </style>
+    <canvas class="myCanvas" width="1200" height="800"></canvas>
+    <div>
+      <button type="reset" class="btn reset">Reset</button>
+      <button type="reset" class="btn color">Change bg</button>
+    </div>
+
+    <script src="draw-mouse.js"></script>
+  </body>
+</html>

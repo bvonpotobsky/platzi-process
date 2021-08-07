@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bank system</title>
+  </head>
+  <body>
+    <h1>Bank</h1>
+    <div class="container">
+      <form action="#">
+        <p>
+          <label for="clientBank">Insert customer Bank Name</label>
+          <input
+            type="text"
+            name="clientBank"
+            id="clientBank"
+            value=""
+            required
+          />
+        </p>
+        <p>
+          <label for="clientAccount">Insert customer Account Number</label>
+          <input
+            type="number"
+            name="clientAccount"
+            id="clientAccount"
+            value=""
+            required
+          />
+        </p>
+        <p>
+          <label for="clientBalance">Insert customer Balance</label>
+          <input
+            type="number"
+            name="clientBalance"
+            id="clientBalance"
+            value=""
+            required
+          />
+        </p>
+        <p>
+          <label for="toTransfer">Insert amount to Transfer</label>
+          <input
+            type="number"
+            name="toTransfer"
+            id="toTransfer"
+            value=""
+            required
+          />
+        </p>
+        <hr />
+        <p>
+          <label for="receiverBank">Insert receiver Bank Name</label>
+          <input
+            type="text"
+            name="receiverBank"
+            id="receiverBank"
+            value=""
+            required
+          />
+        </p>
+        <p>
+          <label for="receiverAccount">Insert customer Account Number</label>
+          <input
+            type="number"
+            name="receiverAccount"
+            id="receiverAccount"
+            value=""
+            required
+          />
+        </p>
+
+        <p>
+          <label for="time">Choose a time for your transaction:</label>
+          <input
+            type="time"
+            id="time"
+            name="time"
+            min="00:00"
+            max="24:00"
+            required
+          />
+        </p>
+
+        <button type="submit" id="sendMoney">Transfer!</button>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

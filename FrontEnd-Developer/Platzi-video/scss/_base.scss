@@ -1,0 +1,26 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap");
+
+// Variables
+$primary: #5c33f6;
+$white: #ffffff;
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem == 10px;
+  font-family: "Roboto", sans-serif;
+  background-color: $primary;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: 1.6rem;
+}
+
+body {
+  width: 100%;
+}

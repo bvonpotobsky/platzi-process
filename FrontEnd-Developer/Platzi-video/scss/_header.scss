@@ -1,0 +1,69 @@
+.header {
+  width: 100%;
+  height: 8rem;
+  color: $white;
+  padding: 1rem;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__img {
+    width: 20rem;
+  }
+
+  &__menu {
+    display: flex;
+    cursor: pointer;
+    font-size: 1.8rem;
+
+    &--profile {
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+
+      svg {
+        margin-right: 1rem;
+      }
+
+      p {
+        //
+      }
+    }
+
+    &--list {
+      position: absolute;
+      text-align: right;
+      list-style: none;
+      margin-right: 1rem;
+      right: 1rem;
+      top: 5rem;
+      z-index: 9999;
+
+      li {
+        margin-bottom: 1rem;
+        visibility: hidden;
+        transition: transform 0.8s ease-out;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+
+      li:last-child {
+        padding-bottom: 1rem;
+      }
+    }
+
+    // When hover, show list
+    &:hover &--list li {
+      display: block;
+      visibility: visible;
+      transform: translateY(2.8rem);
+    }
+  }
+}

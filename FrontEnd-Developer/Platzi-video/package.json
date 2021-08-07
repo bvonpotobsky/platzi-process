@@ -1,0 +1,14 @@
+{
+  "name": "platzi-video",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "watch:sass": "node-sass scss/main.scss css/style.css -w"
+  },
+  "author": "Benjamin",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

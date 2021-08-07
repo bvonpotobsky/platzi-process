@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATM</title>
+  </head>
+  <body>
+    <h2 class="title">Welcome to Bitcoin ATM</h2>
+    <p class="actual-amount"></p>
+    <p>
+      <img src="img/atm.gif" alt="ATM" class="atm" />
+    </p>
+    <p class="cash-box">
+      <input type="number" class="money" min="1" placeholder="$3300" />
+      <input type="button" class="cash-out" value="Cash out" />
+    </p>
+    <p class="result"></p>
+    <script src="app.js"></script>
+  </body>
+  <style>
+    html {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      height: 100%;
+      background-color: #000000;
+      color: #ffffff;
+
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .actual-amount {
+      font-size: 1.4rem;
+    }
+
+    .atm {
+      width: 600px;
+      border: 5px solid black;
+    }
+
+    .cash-box {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: 500px;
+      left: 460px;
+    }
+
+    .money {
+      height: 2rem;
+      width: 10rem;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-radius: 2px;
+      border: none;
+    }
+
+    .money:focus {
+      outline: none;
+    }
+
+    .cash-out {
+      font-size: 1.5rem;
+      height: 2.5rem;
+      border-radius: 0;
+      border: none;
+      padding: 0 1rem;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    .cash-out:hover {
+      box-shadow: 0 5px 10px -10px rgba(0, 0, 0, 0.8);
+    }
+
+    .result {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+    }
+
+    .paragraph {
+      margin-left: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    .notes {
+      height: 180px;
+      width: 350px;
+    }
+  </style>
+</html>
