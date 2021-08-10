@@ -14,7 +14,7 @@ async function callApi(endpoint, options = {}) {
     Accept: 'application/json',
   };
 
-  const url = BASE_URL + endpoint;
+       const url = BASE_URL + endpoint;
   const response = await fetch(url, options);
   const data = await response.json();
 
