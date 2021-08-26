@@ -10,7 +10,6 @@ class Car {
     }
 
     void getDataCar() {
-        System.out.println("License: " + license + " Driver: " + driver.name);
+        System.out.println("Car license: " + license + " Driver: " + driver.name);
     }
-
 }

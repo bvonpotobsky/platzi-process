@@ -1,4 +1,4 @@
-class Car {
+export default class Car {
     constructor(license, driver) {
         this.id;
         this.license = license;
