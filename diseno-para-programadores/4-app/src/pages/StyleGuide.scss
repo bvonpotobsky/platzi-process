@@ -1,0 +1,128 @@
+@import "../scss/base.scss";
+
+.StyleGuide {
+  position: relative;
+
+  &__section {
+    grid-column: 1/-1;
+    margin: 40px 0;
+
+    &-subtitle {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .Menu,
+    .Contact,
+    .Nav {
+      padding: 0;
+    }
+  }
+
+  &__typography,
+  &__colors,
+  &__ctas {
+    text-align: center;
+  }
+
+  &__main-title {
+    background-color: $color-black;
+    grid-column: 1/-1;
+    margin: 0 0 20px;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  &__wrapper {
+    min-height: 100px;
+    position: relative;
+  }
+
+  &__masthead {
+    background-color: #e8e8e8;
+    margin-bottom: 60px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  &__color {
+    background-color: $color-black;
+    display: block;
+    font-family: $font-primary;
+    margin-top: 30px;
+    padding: 25px 0;
+    text-align: center;
+    width: 100%;
+
+    @include for-size(l) {
+      display: inline-block;
+      width: 300px;
+      margin-right: 30px;
+    }
+
+    &--0 {
+      background-color: $color-white;
+      border: 2px solid $color-black;
+      color: $color-black;
+    }
+
+    &--1 {
+      background-color: $color-black;
+      color: $color-white;
+    }
+
+    &--2 {
+      background-color: $color-primary;
+    }
+
+    &--3 {
+      background-color: $color-secondary;
+      color: $color-white;
+    }
+
+    &--4 {
+      background-color: $color-terciary;
+    }
+
+    &--5 {
+      background-color: $color-cuaternary;
+      color: $color-white;
+    }
+  }
+
+  &__typography {
+    &-title {
+      font-size: 30px;
+    }
+
+    &-heading,
+    &-title {
+      grid-column: 1/-1;
+      margin: 20px 0;
+    }
+
+    h1,
+    h2 {
+      background-color: $color-black;
+      padding: 8px;
+    }
+  }
+
+  &__column {
+    background-color: $color-terciary;
+    border: 3px solid $color-black;
+    color: $color-black;
+    font-family: $font-primary;
+    font-size: 30px;
+    margin-bottom: 10px;
+    padding: 100px 0;
+    text-align: center;
+  }
+
+  &__ctas {
+    .Cta {
+      display: inline-block;
+      margin: 20px 20px 20px 0;
+    }
+  }
+}

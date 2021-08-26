@@ -1,0 +1,44 @@
+@import "../../scss/base.scss";
+
+.Hero {
+  background-color: $color-cuaternary;
+  background-image: url("../../images/bg-small.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: $padding-large $padding-x-small $padding-extra-large;
+  position: relative;
+  text-align: center;
+
+  @include for-size(m) {
+    background-image: url("../../images/bg-large.png");
+  }
+
+  &:after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba($color-black, 0.4);
+    z-index: 1;
+  }
+
+  &-title,
+  &-subtitle {
+    margin-bottom: $padding-small;
+  }
+
+  &-title,
+  &-subtitle,
+  &-icon,
+  &-cta {
+    position: relative;
+    z-index: 2;
+  }
+
+  &-icon {
+    margin: $padding-large 0 $padding-small;
+  }
+}

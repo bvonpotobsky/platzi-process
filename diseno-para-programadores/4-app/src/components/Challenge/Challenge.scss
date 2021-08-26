@@ -1,0 +1,28 @@
+@import "../../scss/base.scss";
+
+.Challenge {
+  background-color: $color-secondary;
+  padding: $padding-large $padding-small;
+  text-align: center;
+
+  &-content {
+    margin: $padding-small auto;
+
+    @include for-size(m) {
+      max-width: 70%;
+    }
+
+    @include for-size(l) {
+      max-width: 50%;
+    }
+  }
+
+  &-items {
+    list-style: none;
+  }
+
+  &-social-item {
+    display: inline-block;
+    margin-right: 25px;
+  }
+}

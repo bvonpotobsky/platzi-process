@@ -1,0 +1,10 @@
+@import "./variables/colors-theme-primary";
+@import "./variables/layout";
+@import "./variables/paddings";
+@import "./variables/typography";
+
+body {
+  background-color: $color-white;
+  margin: 0;
+  padding: 0;
+}
