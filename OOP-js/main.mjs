@@ -82,6 +82,3 @@ const freddy = new TeacherStudent({
 student_2.postComment('Me encanto el curso');
 student_1.postComment('Me encanto el curso pero no tanto');
 freddy.postComment('Me encanto el curso pero no tanto');
-
-const a = {};
-console.log(a);
