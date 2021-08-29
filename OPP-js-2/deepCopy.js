@@ -77,24 +77,47 @@ function createStudent({
   approvedCourses = [],
   learningPath = [],
 } = {}) {
-  return {
-    name,
+  const private = {
+    _name: name,
+  };
+
+  const public = {
     age,
     email,
+    approvedCourses,
+    learningPath,
     socialMedia: {
       twitter,
       instagram,
       facebook,
     },
-    approvedCourses,
-    learningPath,
+
+    readName() {
+      return private._name;
+    },
+
+    changeName(newName) {
+      private._name = newName;
+    },
   };
+
+  Object.defineProperty(public, "readName", {
+    configurable: false,
+    writable: false,
+  });
+
+  Object.defineProperty(public, "changeName", {
+    writable: false,
+    configurable: false,
+  });
+
+  return public;
 }
+
+// Object created
 const luciano = createStudent({
   name: "Luciano",
   age: 24,
   email: "lucianopaviotti@gmail.com",
   instagram: "lucianopaviotti",
 });
-const raro = createStudent({ name: "Juan", email: "bvp@gmail.com" });
-console.log(raro);
