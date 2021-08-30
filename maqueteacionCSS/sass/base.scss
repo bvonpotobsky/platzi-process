@@ -3,7 +3,8 @@ $font-1: "Bitter", serif;
 $font-2: "Work Sans", sans-serif;
 
 $color-primary: #47cfac;
-$color-white: #f7f6f2;
+$color-white: #fff;
+$color-white-2: #f7f6f2;
 $color-black: #000;
 
 *,
@@ -23,6 +24,4 @@ body {
   width: 100%;
   min-height: 100vh;
   font-size: 1.6rem;
-
-  background-color: black; // will remove
 }

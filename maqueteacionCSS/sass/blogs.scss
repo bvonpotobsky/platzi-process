@@ -1,0 +1,58 @@
+.blogsContainer {
+  width: inherit;
+  height: auto;
+  &__title {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+  }
+}
+
+.blogpostGrid {
+  padding: 0 5rem 3rem;
+  text-align: center;
+}
+
+.blogpost {
+  display: inline-block;
+  padding: 0 2rem;
+  max-width: 30%;
+  margin-bottom: 5rem;
+  font-family: $font-2;
+  text-align: left;
+
+  &__title {
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__p {
+    margin-bottom: 3.5rem;
+    font-size: 1.8rem;
+  }
+
+  &__button {
+    display: inline-block;
+    border: 1px solid $color-primary;
+    width: 10rem;
+    height: 4rem;
+    padding-top: 0.75rem;
+    font-family: $font-2;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-decoration: none;
+    text-align: center;
+    color: $color-black;
+    transition: all 0.2s;
+  }
+
+  &__button:hover {
+    background-color: $color-primary;
+  }
+}

@@ -1,0 +1,64 @@
+.newsContainer {
+  display: block;
+  background-color: $color-white-2;
+  margin: 0 auto;
+  width: inherit;
+  padding: 2rem 20rem;
+
+  font-family: $font-2;
+
+  &__title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+.news {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__img {
+    width: 60rem;
+  }
+
+  &__blog {
+    width: 50%;
+    align-self: stretch;
+    padding: 0 10rem;
+    //
+    &__title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 3rem;
+      letter-spacing: 1px;
+      padding: 1rem 0;
+    }
+
+    &__p {
+      text-align: left;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      font-weight: 500;
+      padding: 1rem 0;
+    }
+
+    &__button {
+      display: block;
+      border: 1px solid $color-primary;
+      width: 10rem;
+      height: 4rem;
+      margin-top: 1rem;
+      font-family: $font-2;
+      font-weight: bold;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    &__button:hover {
+      background-color: $color-primary;
+    }
+  }
+}

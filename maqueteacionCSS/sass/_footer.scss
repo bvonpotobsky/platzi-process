@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  width: inherit;
+  height: 10rem;
+  background-color: $color-primary;
+  align-items: flex-end;
+  font-family: $font-2;
+
+  &__p {
+    display: block;
+    width: inherit;
+    height: 7rem;
+    padding-top: 2.4rem;
+    font-size: 2.2rem;
+    text-align: center;
+    color: $color-white;
+    background-color: $color-black;
+  }
+}
