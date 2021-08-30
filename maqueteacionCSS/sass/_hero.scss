@@ -1,0 +1,31 @@
+.hero {
+  background-image: url("../assets/img/cover.png");
+  background-size: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: inherit;
+  height: 84.1vh;
+
+  &__title {
+    font-family: $font-2;
+    font-size: 6rem;
+    color: $color-white;
+    text-align: center;
+    padding: 10rem 0;
+  }
+
+  &__button {
+    display: block;
+    width: 14rem;
+    height: 6rem;
+    margin: 0 auto;
+    background-color: $color-primary;
+
+    border: 2px solid $color-white;
+    color: $color-black;
+    font-size: 2.4rem;
+    font-family: $font-1;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

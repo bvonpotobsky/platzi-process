@@ -6,4 +6,84 @@
   padding: 0; }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  background-color: black; }
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 6rem;
+  width: 100%;
+  padding: 0 5rem;
+  background-color: #47cfac; }
+  .nav__icon {
+    margin-right: 3rem; }
+    .nav__icon--github {
+      display: block;
+      background-image: url(../assets/icons/github.svg);
+      fill: currentColor;
+      width: 3.5rem;
+      height: 3.5rem;
+      filter: brightness(0) invert(1); }
+    .nav__icon--linkedin {
+      display: block;
+      background-image: url(../assets/icons/linkedin.svg);
+      width: 3.5rem;
+      height: 3.5rem;
+      filter: brightness(0) invert(1); }
+    .nav__icon--twitter {
+      display: block;
+      background-image: url(../assets/icons/twitter.svg);
+      width: 3.5rem;
+      height: 3.5rem;
+      filter: brightness(0) invert(1); }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 8rem;
+  background-color: #f7f6f2; }
+  .header__img {
+    width: 32rem; }
+  .header__aboutMe {
+    color: #000;
+    font-family: "Bitter", serif;
+    font-size: 2.5rem;
+    line-height: 4.5rem;
+    letter-spacing: 2px; }
+
+.hero {
+  background-image: url("../assets/img/cover.png");
+  background-size: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: inherit;
+  height: 84.1vh; }
+  .hero__title {
+    font-family: "Work Sans", sans-serif;
+    font-size: 6rem;
+    color: #f7f6f2;
+    text-align: center;
+    padding: 10rem 0; }
+  .hero__button {
+    display: block;
+    width: 14rem;
+    height: 6rem;
+    margin: 0 auto;
+    background-color: #47cfac;
+    border: 2px solid #f7f6f2;
+    color: #000;
+    font-size: 2.4rem;
+    font-family: "Bitter", serif;
+    font-weight: bold;
+    cursor: pointer; }

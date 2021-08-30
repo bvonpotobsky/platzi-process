@@ -1,0 +1,61 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 6rem;
+  width: 100%;
+  padding: 0 5rem;
+
+  background-color: $color-primary;
+
+  &__icon {
+    margin-right: 3rem;
+
+    &--github {
+      display: block;
+      background-image: url(../assets/icons/github.svg);
+      fill: currentColor;
+      width: 3.5rem;
+      height: 3.5rem;
+      filter: brightness(0) invert(1);
+    }
+
+    &--linkedin {
+      display: block;
+      background-image: url(../assets/icons/linkedin.svg);
+      width: 3.5rem;
+      height: 3.5rem;
+      filter: brightness(0) invert(1);
+    }
+
+    &--twitter {
+      display: block;
+      background-image: url(../assets/icons/twitter.svg);
+      width: 3.5rem;
+      height: 3.5rem;
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 8rem;
+  background-color: $color-white;
+
+  &__img {
+    width: 32rem;
+  }
+
+  &__aboutMe {
+    color: #000;
+    font-family: $font-1;
+    font-size: 2.5rem;
+    line-height: 4.5rem;
+    letter-spacing: 2px;
+  }
+}
