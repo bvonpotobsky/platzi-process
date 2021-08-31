@@ -1,0 +1,88 @@
+.profile {
+  display: block;
+  width: 100%;
+  height: 40rem;
+  background-color: $color-white-2;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 2rem;
+  font-family: $font-2;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    grid-column: 3 / 6;
+    grid-row: 2 / 6;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    grid-column: 6 / 11;
+    grid-row: 3 / 4;
+
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  &__p {
+    grid-column: 6 / 11;
+    grid-row: 4 / 6;
+
+    font-size: 2.2rem;
+    font-weight: 500;
+  }
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+
+  font-family: $font-2;
+  width: 100%;
+  height: 55rem;
+
+  &__title {
+    display: block;
+    grid-column: 3 / 11;
+    grid-row: 2 / 3;
+    text-align: center;
+    border-bottom: 1px solid rgba($color-black, 0.1);
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+}
+
+.project {
+  &--1 {
+    grid-column: 3 / 5;
+    grid-row: 3 / 7;
+  }
+  &--2 {
+    grid-column: 6 / 8;
+    grid-row: 3 / 7;
+  }
+  &--3 {
+    grid-column: 9 / 11;
+    grid-row: 3 / 7;
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  &__p {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: 500;
+  }
+}
