@@ -24,7 +24,8 @@ body {
   padding: 0 5rem;
   background-color: #47cfac; }
   .nav__icon {
-    margin-right: 3rem; }
+    margin-right: 3rem;
+    transition: all 0.2s; }
     .nav__icon--github {
       display: block;
       background-image: url(../assets/icons/github.svg);
@@ -44,6 +45,8 @@ body {
       width: 3.5rem;
       height: 3.5rem;
       filter: brightness(0) invert(1); }
+    .nav__icon:hover {
+      filter: brightness(0) invert(0.5); }
 
 .header {
   display: flex;
@@ -88,7 +91,10 @@ body {
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all 0.2s; }
+    .hero__button:hover {
+      transform: translateY(-2px); }
 
 .newsContainer {
   display: block;
@@ -182,6 +188,60 @@ body {
     transition: all 0.2s; }
   .blogpost__button:hover {
     background-color: #47cfac; }
+
+.figure {
+  display: block;
+  width: 100%;
+  height: 60rem;
+  background-image: url("../assets/img/main-news-img.png");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: top; }
+
+.blog {
+  margin: 2rem auto;
+  max-width: 110rem;
+  width: 110rem;
+  font-size: 2rem;
+  font-family: "Work Sans", sans-serif; }
+  .blog__news {
+    display: block;
+    width: 100%;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 2.5rem; }
+  .blog__title {
+    padding: 2rem 0; }
+  .blog__p {
+    line-height: 2.5rem;
+    font-weight: 400; }
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 30rem;
+  background-color: #f7f6f2;
+  padding: 2rem auto; }
+  .contact__box {
+    display: grid;
+    height: 7rem;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center; }
+    .contact__box__img {
+      width: 10rem;
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+      justify-self: center; }
+    .contact__box__title {
+      grid-column: 2 / span;
+      grid-row: 1 / span; }
+    .contact__box__p {
+      grid-row: 1 / span;
+      grid-column: 2 / span; }
 
 .footer {
   display: flex;
