@@ -1,14 +1,17 @@
-		{
+{
   "name": "js-profesional",
   "version": "1.0.0",
   "description": "Curso profesional de JavaScript en Platzi",
   "main": "index.js",
   "scripts": {
-    "start": "live-server"
+    "start": "parcel index.html index.html ejercicios/**/*.html"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.1"
-  }
+    "parcel": "^2.0.0-rc.0"
+  },
+  "browserlist": [
+    "last 1 Chrome version"
+  ]
 }
