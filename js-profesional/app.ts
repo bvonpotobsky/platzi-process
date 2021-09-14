@@ -1,18 +1,22 @@
 import MediaPlayer from "./MediaPlayer";
 import AutoPlay from "./assets/plugins/AutoPlay";
 import AutoPause from "./assets/plugins/AutoPause";
+import AdsPlugin from "./assets/plugins/Ads";
 
-// Catch the DOM
-const video: HTMLElement = document.querySelector("video");
+const video = document.querySelector("video");
+const videoPlayer = new MediaPlayer({
+  el: video,
+  plugins: [new AutoPlay(), new AutoPause(), new AdsPlugin()],
+});
+
 const playButton: HTMLElement = document.querySelector("#playButton");
 const muteButton: HTMLElement = document.querySelector("#muteButton");
 
-// Create an instance from the Prototype
-const videoPlayer = new MediaPlayer({
-  el: video,
-  plugins: [new AutoPlay(), new AutoPause()],
-});
-
+// if ("serviceWorker" in navigator) {
+//   navigator.serviceWorker.register("./sw.js").catch((error) => {
+//     console.log(error.message);
+//   });
+// }
 // Add event listener
 playButton.onclick = () => videoPlayer.togglePlay();
 muteButton.onclick = () => videoPlayer.toggleMute();
