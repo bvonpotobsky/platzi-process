@@ -1,0 +1,56 @@
+.carousel-item {
+  display: inline-block;
+  width: 25rem;
+  height: 30rem;
+  border-radius: 2rem;
+  margin-right: 1rem;
+  overflow: hidden;
+  transition: 450ms all;
+  transform-origin: center left;
+  cursor: pointer;
+  position: relative;
+
+  &__img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
+
+  &__details {
+    // background: linear-gradient(
+    //   to top,
+    //   rgba(0, 0, 0, 0.9) 0%,
+    //   rgba(0, 0, 0, 0) 100%
+    // );
+    font-size: 1rem;
+    transition: 450ms opacity;
+    padding: 1rem;
+    position: absolute;
+    left: 1px;
+    bottom: 40px;
+    opacity: 1;
+
+    div img {
+      width: 3rem;
+      height: 3rem;
+      overflow: hidden;
+    }
+
+    &--title {
+      position: absolute;
+      color: $white;
+      bottom: 28px;
+      left: 14px;
+      font-size: 1.6rem;
+    }
+
+    &--subtitle {
+      position: absolute;
+      color: $white;
+      bottom: 10px;
+      left: 14px;
+      font-size: 1.3rem;
+      // TODO
+    }
+  }
+}

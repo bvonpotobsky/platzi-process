@@ -42,6 +42,9 @@ module.exports = {
         test: /\.(jpg|png)$/,
         use: {
           loader: "url-loader",
+          options: {
+            name: "assets/[hash].[ext]",
+          },
         },
       },
     ],
