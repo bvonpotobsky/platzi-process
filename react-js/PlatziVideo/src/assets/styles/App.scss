@@ -1,5 +1,3 @@
-body {
-  margin: 0;
-  background-color: #f45;
-  color: #fff;
-}
+@import "./Base.scss";
+@import "./components/Header.scss";
+@import "./components/Search.scss";
