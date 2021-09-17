@@ -1,0 +1,13 @@
+.TodoButton {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto;
+  border: none;
+  border-radius: 50%;
+  font-size: 4rem;
+  font-weight: 500;
+  color: $color-light;
+  background-color: $color-button;
+  cursor: pointer;
+}

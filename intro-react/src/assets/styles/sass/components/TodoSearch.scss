@@ -1,0 +1,16 @@
+.TodoSearch {
+  display: block;
+  width: 45rem;
+  max-width: 45rem;
+  height: 5rem;
+  margin: 2rem auto;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+
+  color: $color-light;
+  background-color: rgba($color-dark, 1);
+}

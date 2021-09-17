@@ -1,0 +1,13 @@
+.TodoCounter {
+  &__title {
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 3rem;
+  }
+  &__counter {
+    margin-top: 1rem;
+    color: rgba($color-light, 0.8);
+    text-align: center;
+    font-weight: 400;
+  }
+}
