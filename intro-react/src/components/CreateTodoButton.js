@@ -1,5 +1,16 @@
 function CreateTodoButton() {
-  return <button className="TodoButton">+</button>;
+  const onClickButton = (msg) => {
+    alert(msg);
+  };
+
+  return (
+    <button
+      className="TodoButton"
+      onClick={() => onClickButton("Aqui se deberia abrir el modal")}
+    >
+      +
+    </button>
+  );
 }
 
 export { CreateTodoButton };
