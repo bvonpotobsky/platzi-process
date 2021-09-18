@@ -21,19 +21,26 @@ function TodoForm() {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <label>...</label>
+    <form className="Form" onSubmit={onSubmit}>
+      <label className="Form__label">Add new Task</label>
       <textarea
-        placeholder="Task goes here"
+        className="Form__textarea"
+        placeholder="Describe tu actividad"
         value={newTodoValue}
         onChange={onChange}
       />
 
-      <div>
-        <button type="button" onClick={onCancel}>
+      <div className="Form__buttons">
+        <button
+          className="Form__buttons--cancel"
+          type="button"
+          onClick={onCancel}
+        >
           Cancelar
         </button>
-        <button type="submit">Añadir</button>
+        <button className="Form__buttons--submit" type="submit">
+          Añadir
+        </button>
       </div>
     </form>
   );

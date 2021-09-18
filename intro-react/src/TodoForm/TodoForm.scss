@@ -1,0 +1,59 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 40rem;
+  height: auto;
+
+  &__label {
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    background-color: rgba($color-dark, 0.8);
+  }
+
+  &__textarea {
+    width: 100%;
+    max-width: 40rem;
+    min-height: 10rem;
+    height: auto;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    border: none;
+    outline: none;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+
+    &--cancel,
+    &--submit {
+      height: 100%;
+      flex: 1;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    &--cancel {
+      background-color: $color-red;
+      font-size: 2rem;
+    }
+
+    &--submit {
+      background-color: $color-green;
+    }
+  }
+}

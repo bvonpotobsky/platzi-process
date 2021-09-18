@@ -13,7 +13,7 @@ function TodoSearch() {
       className="TodoSearch"
       value={searchValue}
       onChange={onSearchValueChange}
-      placeholder="Ingresa algo para hacer"
+      placeholder="Busca tus actividades"
     />
   );
 }
