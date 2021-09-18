@@ -1,0 +1,67 @@
+.LoadingTodo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  width: 45rem;
+  max-width: 45rem;
+  min-width: 32rem;
+  height: 5rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+  box-shadow: 0px 10px 5px -5px black;
+  border-radius: 0.5rem;
+
+  .LoadingTodo-completeIcon {
+    border: none;
+    outline: none;
+    transform: scale(1.2);
+    width: 2.2rem;
+    height: 2.2rem;
+    background-color: black;
+    border-radius: 0.2rem;
+    // cursor: pointer;
+  }
+
+  .LoadingTodo-text {
+    letter-spacing: 1px;
+    color: $color-dark;
+  }
+
+  .LoadingTodo-deleteIcon {
+    cursor: pointer;
+    border: none;
+    background-color: black;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.2rem;
+    transform: scale(1.2);
+    transition: all 0.1s;
+  }
+}
+
+.LoadingTodo-container,
+.LoadingTodo-completeIcon,
+.LoadingTodo-deleteIcon {
+  background: linear-gradient(
+    90deg,
+    rgba(250, 250, 250, 0.1),
+    rgb(200, 199, 199)
+  );
+  background-size: 400% 400%;
+  animation: loadingAnimation 3s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
