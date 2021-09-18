@@ -1,5 +1,6 @@
 .TodoButton {
   display: block;
+  position: relative;
   width: 5rem;
   height: 5rem;
   margin: 0 auto;
@@ -10,4 +11,5 @@
   color: $color-light;
   background-color: $color-button;
   cursor: pointer;
+  z-index: 9;
 }

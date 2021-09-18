@@ -1,14 +1,11 @@
-function CreateTodoButton() {
-  const onClickButton = (msg) => {
-    alert(msg);
+function CreateTodoButton({ openModal, setOpenModal }) {
+  const onClickButton = () => {
+    setOpenModal((prevState) => !prevState);
   };
 
   return (
-    <button
-      className="TodoButton"
-      onClick={() => onClickButton("Aqui se deberia abrir el modal")}
-    >
-      +
+    <button className="TodoButton" onClick={onClickButton}>
+      {openModal ? "x" : "+"}
     </button>
   );
 }
