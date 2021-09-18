@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 0.8rem;
+  overflow: hidden;
 
   width: 40rem;
   height: auto;
@@ -25,8 +27,11 @@
     padding-top: 0.5rem;
     font-size: 2rem;
     font-weight: 500;
+    color: $color-light;
+    background-color: rgba($color-dark, 0.8);
     border: none;
     outline: none;
+    resize: none;
   }
 
   &__buttons {

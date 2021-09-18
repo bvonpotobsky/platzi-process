@@ -25,9 +25,11 @@ function AppUi() {
       <TodoCounter />
       <TodoSearch />
       <TodoList>
-        {loading && <p>Estamos cargando los items..</p>}
-        {error && <p>Estamos cargando los items..</p>}
-        {!loading && !searchedTodos.length && <p>Crea tu primer TODO!</p>}
+        {loading && <p className="message">Estamos cargando los items..</p>}
+        {error && <p className="message">Estamos cargando los items..</p>}
+        {!loading && !searchedTodos.length && (
+          <p className="message">Crea tu primer TODO!</p>
+        )}
         {searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
