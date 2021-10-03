@@ -1,0 +1,456 @@
+html {
+  font-size: 62.5%;
+  --lawn-green: #8cb369;
+  --bush-red: #a24936;
+  --bush-green: #32965d;
+  --bush-red2: #9e2a2b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  counter-reset: score;
+}
+
+.score {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.phone {
+  position: relative;
+  border: 8px solid #000;
+  border-radius: 40px;
+  height: 600px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.25), 0 15px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+}
+
+.layer-1 {
+  z-index: 1;
+  height: 450px;
+  width: 80px;
+  bottom: 0;
+  right: 60px;
+  animation-name: jump;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+
+  25% {
+    bottom: -80px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  appearance: none;
+  cursor: pointer;
+  z-index: 1;
+  width: 100%;
+  height: 80px;
+}
+
+input[type="checkbox"]:focus {
+  appearance: none;
+  outline: none;
+}
+
+input:checked {
+  counter-increment: score;
+}
+
+.score::after {
+  content: counter(score);
+}
+
+.layer-2 {
+  z-index: 2;
+  height: 450px;
+  width: 80px;
+  bottom: 0;
+  left: 60px;
+
+  animation: jump 2.3s ease-in-out 0.2s infinite;
+}
+
+.layer-3 {
+  z-index: 3;
+  width: 220px;
+  height: 400px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  background-color: var(--lawn-green);
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.25);
+}
+
+.layer-4 {
+  z-index: 4;
+  height: 300px;
+  width: 80px;
+  bottom: 0;
+  left: 33px;
+
+  animation: jump 2s ease-in-out 0.2s infinite;
+}
+
+.layer-5 {
+  z-index: 5;
+  width: 150px;
+  height: 250px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--lawn-green);
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.25);
+}
+
+.layer-6 {
+  z-index: 6;
+  height: 190px;
+  width: 80px;
+  bottom: 10px;
+  right: 50px;
+
+  animation: jump 3.5s ease-in-out 0.2s infinite;
+}
+
+.layer-7 {
+  z-index: 7;
+  width: 200px;
+  height: 150px;
+  right: 0;
+  bottom: 0;
+  background-color: var(--lawn-green);
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.25);
+}
+
+.layer-8 {
+  z-index: 8;
+  width: 210px;
+  height: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+.layer-9 {
+  z-index: 9;
+  width: 120px;
+  height: 90px;
+  left: 0;
+  bottom: 0;
+}
+
+.layer-10 {
+  z-index: 10;
+  width: 120px;
+  height: 90px;
+  right: 0;
+  bottom: 0;
+}
+
+/* BUNNY  */
+.left-ear--outer {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 50px;
+  border-radius: 90%;
+  background-color: #fff;
+}
+
+.left-ear--inner {
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  left: 15px;
+  top: 8px;
+  border-radius: 90%;
+  background-color: pink;
+}
+
+.right-ear--outer {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 50px;
+  border-radius: 90%;
+  background-color: #fff;
+}
+
+.right-ear--inner {
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  right: 15px;
+  top: 8px;
+  border-radius: 90%;
+  background-color: pink;
+}
+
+.head {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  left: 0;
+  right: 0;
+  top: 30px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.head__eye {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  top: 13px;
+  background-color: gray;
+
+  animation-name: blink;
+  animation: blink 1.2s infinite;
+}
+
+.head__eye.head__eye--left {
+  left: 30px;
+}
+.head__eye.head__eye--right {
+  right: 30px;
+}
+
+/* SHAPES */
+.moutain-shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--lawn-green);
+  bottom: 0;
+}
+
+@keyframes blink {
+  0% {
+    transform: translate(0px, 2px);
+    height: 4px;
+  }
+
+  5% {
+    height: 1px;
+  }
+
+  10% {
+    transform: translate(0px, 0px);
+    height: 4px;
+  }
+}
+
+.mountain-pattern {
+  position: absolute;
+  width: 100%;
+  height: 5.5rem;
+  background: linear-gradient(135deg, var(--bush-green) 25%, transparent 25%) -2.75rem
+      0,
+    linear-gradient(225deg, var(--bush-green) 25%, transparent 25%) -2.75rem 0,
+    linear-gradient(315deg, var(--lawn-green) 25%, transparent 25%),
+    linear-gradient(45deg, var(--lawn-green) 25%, transparent 25%);
+  background-size: 5.5rem 5.5rem;
+  background-color: var(--bush-green);
+}
+
+.bush-1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 100%;
+  width: 40%;
+  border-radius: 50% 50% 30% 30%;
+  background: var(--bush-green);
+}
+
+.bush-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60%;
+  width: 80%;
+  border-radius: 30% 50% 30% 45%;
+  background: var(--bush-green);
+}
+
+.bush-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 60%;
+  width: 80%;
+  border-radius: 0 20% 50% 50%;
+  background: var(--bush-green);
+}
+
+.bush-4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60%;
+  width: 10%;
+  background: var(--bush-red2);
+  border-radius: 50% 50% 0 0;
+}
+
+.bush-5 {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  height: 70%;
+  width: 10%;
+  background: var(--bush-red2);
+  border-radius: 50% 50% 0 0;
+}
+
+.bush-6 {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  height: 75%;
+  width: 10%;
+  background: var(--bush-red2);
+  border-radius: 50% 50% 0 0;
+}
+
+.bush-7 {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  height: 85%;
+  width: 10%;
+  background: var(--bush-red2);
+  border-radius: 50% 50% 0 0;
+}
+
+.bush-8 {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  height: 100%;
+  width: 10%;
+  background: var(--bush-red2);
+  border-radius: 50% 50% 0 0;
+}
+
+.bush-9 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 100%;
+  width: 10%;
+  background: var(--bush-red2);
+  border-radius: 50% 50% 0 0;
+}
+
+.bush-10 {
+  position: absolute;
+  bottom: 0;
+  left: 60%;
+  height: 90%;
+  width: 10%;
+  background: var(--bush-red2);
+  border-radius: 50% 50% 0 0;
+}
+
+.bush-11 {
+  position: absolute;
+  bottom: 0;
+  left: 70%;
+  height: 85%;
+  width: 10%;
+  background: var(--bush-red2);
+  border-radius: 50% 50% 0 0;
+}
+
+.bush-12 {
+  position: absolute;
+  bottom: 0;
+  left: 80%;
+  height: 100%;
+  width: 10%;
+  background: var(--bush-red2);
+  border-radius: 50% 50% 0 0;
+}
+
+.bush-13 {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50% 50% 30% 30%;
+  background: var(--bush-green);
+}
+
+.bush-14 {
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background: var(--bush-green);
+}
+
+.bush-15 {
+  position: absolute;
+  bottom: 0rem;
+  right: 1rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background: var(--bush-green);
+}
+
+.bush-16 {
+  position: absolute;
+  bottom: 0rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 6rem;
+  width: 8rem;
+  border-radius: 50% 50% 20% 20%;
+  background: var(--bush-green);
+}
