@@ -1,0 +1,33 @@
+// Variables
+$yellow: #ffd602;
+$red: #d5040a;
+$blue: #036cb6;
+
+$font-primary: "Lato", sans-serif;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: $font-primary;
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}

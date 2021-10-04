@@ -1,0 +1,15 @@
+{
+  "name": "lego-landing",
+  "version": "1.0.0",
+  "description": "Landing page for LEGO's",
+  "main": "index.js",
+  "scripts": {
+    "w:sass": "node-sass -w styles/scss/index.scss styles/css/style.css"
+  },
+  "keywords": [],
+  "author": "@bvonpotobsky",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
