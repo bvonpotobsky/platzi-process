@@ -1,0 +1,36 @@
+{
+  "name": "react-practice-2",
+  "version": "1.0.0",
+  "description": "React Shop",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "react",
+    "javascript"
+  ],
+  "author": "@bvonpotobsky",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "devDependencies": {
+    "css-loader": "^6.3.0",
+    "mini-css-extract-plugin": "^2.4.1",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.0"
+  }
+}

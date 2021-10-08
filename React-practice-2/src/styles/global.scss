@@ -1,0 +1,20 @@
+// Variables
+$base-color: #ff0000;
+$color: rgba(black, 0.88);
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba($color, 0.2);
+  color: $color;
+}
