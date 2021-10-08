@@ -1,0 +1,151 @@
+.login {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.form-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 32rem;
+  justify-items: center;
+}
+
+.logo {
+  width: 15rem;
+  margin-bottom: 4.8rem;
+  justify-self: center;
+  display: none;
+}
+
+.title {
+  font-size: $lg;
+  margin-bottom: 2.8rem;
+  text-align: center;
+}
+
+.subtitle {
+  margin-bottom: 3.2rem;
+  color: $very-light-pink;
+  font-size: $md;
+  font-weight: 300;
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: $hospital-green;
+    font-size: $sm;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 5.2rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.label {
+  font-size: $sm;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.input {
+  height: 3rem;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  font-size: $md;
+  background-color: $text-input-field;
+  margin-bottom: 1.2rem;
+}
+
+.input-name,
+.input-email,
+.input-password {
+  margin-bottom: 2.2rem;
+}
+
+.value {
+  color: $very-light-pink;
+  font-size: $md;
+  margin: 0.8rem 0 3.2rem 0;
+}
+
+.email-image {
+  width: 13.2rem;
+  height: 13.2rem;
+  margin-bottom: 2.4rem;
+  border-radius: 50%;
+  background-color: $text-input-field;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 8rem;
+  }
+}
+
+.resend {
+  font-size: $sm;
+
+  span {
+    color: $very-light-pink;
+  }
+
+  a {
+    color: $hospital-green;
+    text-decoration: none;
+  }
+}
+
+.primary-button {
+  width: 100%;
+  height: 5rem;
+  border: none;
+  border-radius: 8px;
+  color: $white;
+  font-weight: bold;
+  font-size: $md;
+  background-color: $hospital-green;
+  cursor: pointer;
+}
+
+.secondary-button {
+  width: 100%;
+  height: 5rem;
+  border: 1px solid $hospital-green;
+  border-radius: 8px;
+  color: $hospital-green;
+  font-weight: bold;
+  font-size: $md;
+  background-color: $white;
+  cursor: pointer;
+}
+
+.login-button {
+  margin-top: 1.4rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 640px) {
+  .form-container {
+    height: 100%;
+  }
+  .form {
+    height: 100%;
+    justify-content: space-between;
+  }
+  .logo {
+    display: block;
+  }
+}

@@ -1,0 +1,40 @@
+.mobile-menu {
+  max-height: 100vh;
+  height: 100vh;
+  padding-left: 2.4rem;
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    margin-top: 2.4rem;
+    list-style: none;
+
+    li {
+      margin-bottom: 2.4rem;
+      a {
+        text-decoration: none;
+        color: $black;
+        font-weight: bold;
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    &:nth-child(1) {
+      border-bottom: 1px solid $very-light-pink;
+    }
+
+    &:nth-child(3) {
+      margin-top: auto;
+    }
+  }
+
+  .email {
+    font-size: $sm;
+    font-weight: 500;
+  }
+
+  .sign-out {
+    color: $hospital-green;
+    font-size: $sm;
+  }
+}

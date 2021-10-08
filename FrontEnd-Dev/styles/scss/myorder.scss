@@ -1,0 +1,21 @@
+.title {
+  font-size: $lg;
+  margin-bottom: 4rem;
+}
+
+.my-order-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 30rem;
+}
+
+.my-order-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart figure img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 20px;
+}
