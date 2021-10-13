@@ -1,0 +1,100 @@
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 2.4rem;
+  border-bottom: 1px solid $very-light-pink;
+}
+
+.menu {
+  display: none;
+}
+
+.logo {
+  width: 10rem;
+}
+
+.navbar-left,
+.navbar-right {
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    li {
+      a {
+        padding: 0.8rem;
+        border: 1px solid $white;
+        border-radius: 8px;
+        color: $very-light-pink;
+        text-decoration: none;
+
+        &:hover {
+          border: 1px solid $hospital-green;
+          color: $hospital-green;
+        }
+      }
+    }
+  }
+}
+
+.navbar-left {
+  display: flex;
+
+  ul {
+    margin-left: 1.2rem;
+  }
+}
+
+.navbar-right {
+  position: relative;
+
+  ul {
+    position: relative;
+    li {
+      &:nth-child(1) {
+        margin-right: 1.2rem;
+        font-size: $sm;
+        color: $very-light-pink;
+      }
+
+      &:nth-child(2) {
+        div {
+          width: 16px;
+          height: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: -6px;
+          right: -3px;
+          font-size: $sm;
+          border-radius: 50%;
+          background-color: $hospital-green;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .menu {
+    display: block;
+  }
+
+  .navbar-left {
+    ul {
+      display: none;
+    }
+  }
+
+  .navbar-right {
+    ul {
+      li {
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+}

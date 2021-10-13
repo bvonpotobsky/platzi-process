@@ -1,0 +1,20 @@
+.product-detail {
+  padding: 2rem;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.6rem;
+
+  & > .title {
+    font-size: $lg;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  img {
+    margin-right: 1.4rem;
+    transform: rotate(180deg);
+  }
+}

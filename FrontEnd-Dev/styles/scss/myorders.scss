@@ -1,0 +1,33 @@
+.order-2 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.6rem;
+  align-items: center;
+  background-color: $text-input-field;
+  margin-bottom: 2.4rem;
+  border-radius: 8px;
+  padding: 2rem 2.4rem;
+
+  p {
+    &:nth-child(2) {
+      text-align: end;
+      font-weight: bold;
+    }
+
+    span {
+      &:nth-child(1) {
+        font-size: $md;
+        font-weight: bold;
+      }
+
+      &:nth-child(2) {
+        font-size: $sm;
+        color: $very-light-pink;
+      }
+    }
+    &:first-child {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
