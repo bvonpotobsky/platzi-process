@@ -11,6 +11,7 @@ import { CreateAccount } from "../pages/CreateAccount";
 import { Checkout } from "../pages/Checkout";
 import { Orders } from "../pages/Orders";
 import { NotFound } from "../pages/NotFound";
+
 import "../styles/index.scss";
 
 const App = () => {
