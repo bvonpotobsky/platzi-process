@@ -1,5 +1,23 @@
-@import "vars";
-@import "global";
-@import "Login";
-@import "RecoveryPassword";
-@import "Header";
+@import "./utils/vars";
+@import "./utils/base";
+
+@import "./components/Header";
+@import "./components/Menu";
+@import "./components/Order";
+@import "./components/OrderItem";
+@import "./components/ProductInfo";
+@import "./components/ProductItem";
+@import "./components/ShoppingCartItem";
+
+@import "./containers/MyOrder";
+@import "./containers/ProductDetail";
+@import "./containers/ProductList";
+
+@import "./pages/Checkout";
+@import "./pages/CreateAccount";
+@import "./pages/Login";
+@import "./pages/MyAccount";
+@import "./pages/NewPassword";
+@import "./pages/Orders";
+@import "./pages/PasswordRecovery";
+@import "./pages/SendEmail";
