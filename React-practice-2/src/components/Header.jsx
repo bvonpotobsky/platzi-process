@@ -1,9 +1,7 @@
 import React from "react";
 
-// import iconMenu from "@icons/";
-// import iconLogo from "@logos/logo_yard_sale.svg";'
-import iconMenu from "../assets/icons/icon_menu.svg";
-import iconLogo from "../assets/logos/logo_yard_sale.svg";
+import iconMenu from "@icons/icon_menu.svg";
+import iconLogo from "@logos/logo_yard_sale.svg";
 import iconShoppingCart from "../assets/icons/icon_shopping_cart_notification.svg";
 
 const Header = () => {
