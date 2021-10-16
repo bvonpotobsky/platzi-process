@@ -2,7 +2,7 @@ import React from "react";
 
 import iconMenu from "@icons/icon_menu.svg";
 import iconLogo from "@logos/logo_yard_sale.svg";
-import iconShoppingCart from "../assets/icons/icon_shopping_cart_notification.svg";
+import iconShoppingCart from "@icons/icon_shopping_cart_notification.svg";
 
 const Header = () => {
   return (
