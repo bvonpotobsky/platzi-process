@@ -1,5 +1,7 @@
 import React from "react";
 
+import "@styles/pages/PasswordRecovery.scss";
+
 function PasswordRecovery() {
   return (
     <div className="login">

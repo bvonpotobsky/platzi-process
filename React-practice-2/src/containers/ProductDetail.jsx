@@ -1,6 +1,8 @@
 import React from "react";
 import ProductInfo from "../components/ProductInfo";
 
+import "@styles/containers/ProductDetail.scss";
+
 const ProductDetail = () => {
   return (
     <aside className="ProductDetail">

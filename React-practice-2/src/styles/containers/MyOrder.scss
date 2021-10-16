@@ -1,9 +1,15 @@
+@import "@styles/utils/_vars";
+
 .MyOrder {
   width: 360px;
   padding: 24px;
-  box-sizing: border-box;
   position: absolute;
   right: 0;
+  background-color: $white;
+  top: 60px;
+  bottom: auto;
+  border-radius: 6px;
+  border: 1px solid $very-light-pink;
 }
 
 .title-container {
