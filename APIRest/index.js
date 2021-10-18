@@ -1,13 +1,19 @@
 const express = require("express");
+const routerAPI = require("./routes");
 
 const app = express();
+const PORT = 3000;
 
-const port = 3000;
+// Middleware
+app.use(express.json());
 
+// Get root
 app.get("/", (req, res) => {
-  res.send("Hola my server en express");
+  res.send("Hola esta es la pagina principal");
 });
 
-app.listen(port, () => {
-  console.log(`Server running in port ${port}`);
+routerAPI(app);
+
+app.listen(PORT, () => {
+  console.log(`Server running in PORT ${PORT}`);
 });
