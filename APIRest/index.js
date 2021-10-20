@@ -1,6 +1,8 @@
 const express = require("express");
 const routerAPI = require("./routes");
 
+const { logErrors, errorHanlder } = require("./middlewares/errorHandler");
+
 const app = express();
 const PORT = 3000;
 
@@ -14,6 +16,9 @@ app.get("/", (req, res) => {
 
 routerAPI(app);
 
+app.use(logErrors);
+app.use(errorHanlder);
+
 app.listen(PORT, () => {
-  console.log(`Server running in PORT ${PORT}`);
+  console.log(`Server running in http://localhost:${PORT}`);
 });
