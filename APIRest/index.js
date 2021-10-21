@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const routerAPI = require("./routes");
 
 const {
@@ -12,6 +13,19 @@ const PORT = 3000;
 
 // Middleware
 app.use(express.json());
+
+const whitelist = ["http://localhost:3000"];
+const options = {
+  origin: (origin, cb) => {
+    if (whitelist.includes(origin)) {
+      cb(null, true);
+    } else {
+      cb(new Error("Access Not Allow"));
+    }
+  },
+};
+
+app.use(cors(options));
 
 // Get root
 app.get("/", (req, res) => {
