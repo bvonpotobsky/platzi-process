@@ -1,13 +1,17 @@
-const express = require('express');
+const express = require("express");
 
-const UserService = require('./../services/user.service');
-const validatorHandler = require('./../middlewares/validator.handler');
-const { updateUserSchema, createUserSchema, getUserSchema } = require('./../schemas/user.schema');
+const UserService = require("./../services/user.service");
+const validatorHandler = require("./../middlewares/validator.handler");
+const {
+  updateUserSchema,
+  createUserSchema,
+  getUserSchema,
+} = require("./../schemas/user.schema");
 
 const router = express.Router();
 const service = new UserService();
 
-router.get('/', async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     const categories = await service.find();
     res.json(categories);
@@ -16,8 +20,9 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.get('/:id',
-  validatorHandler(getUserSchema, 'params'),
+router.get(
+  "/:id",
+  validatorHandler(getUserSchema, "params"),
   async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -29,8 +34,9 @@ router.get('/:id',
   }
 );
 
-router.post('/',
-  validatorHandler(createUserSchema, 'body'),
+router.post(
+  "/",
+  validatorHandler(createUserSchema, "body"),
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -42,9 +48,10 @@ router.post('/',
   }
 );
 
-router.patch('/:id',
-  validatorHandler(getUserSchema, 'params'),
-  validatorHandler(updateUserSchema, 'body'),
+router.patch(
+  "/:id",
+  validatorHandler(getUserSchema, "params"),
+  validatorHandler(updateUserSchema, "body"),
   async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -57,13 +64,14 @@ router.patch('/:id',
   }
 );
 
-router.delete('/:id',
-  validatorHandler(getUserSchema, 'params'),
+router.delete(
+  "/:id",
+  validatorHandler(getUserSchema, "params"),
   async (req, res, next) => {
     try {
       const { id } = req.params;
       await service.delete(id);
-      res.status(201).json({id});
+      res.status(201).json({ id });
     } catch (error) {
       next(error);
     }
@@ -71,4 +79,3 @@ router.delete('/:id',
 );
 
 module.exports = router;
-
