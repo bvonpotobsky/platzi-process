@@ -6,6 +6,7 @@ const {
   logErrors,
   errorHandler,
   boomErrorHandler,
+  ormErrorHandler,
 } = require('./middlewares/error.handler');
 
 const app = express();
@@ -36,9 +37,10 @@ app.get('/nueva-ruta', (req, res) => {
 routerApi(app);
 
 app.use(logErrors);
+app.use(ormErrorHandler);
 app.use(boomErrorHandler);
 app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log('Mi port' + port);
+  console.log(`Server running in port ${port}`);
 });
