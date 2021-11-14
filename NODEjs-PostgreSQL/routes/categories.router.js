@@ -1,17 +1,13 @@
-const express = require("express");
+const express = require('express');
 
-const CategoryService = require("./../services/category.service");
-const validatorHandler = require("./../middlewares/validator.handler");
-const {
-  createCategorySchema,
-  updateCategorySchema,
-  getCategorySchema,
-} = require("./../schemas/category.schema");
+const CategoryService = require('./../services/category.service');
+const validatorHandler = require('./../middlewares/validator.handler');
+const { createCategorySchema, updateCategorySchema, getCategorySchema } = require('./../schemas/category.schema');
 
 const router = express.Router();
 const service = new CategoryService();
 
-router.get("/", async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
     const categories = await service.find();
     res.json(categories);
@@ -20,9 +16,8 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get(
-  "/:id",
-  validatorHandler(getCategorySchema, "params"),
+router.get('/:id',
+  validatorHandler(getCategorySchema, 'params'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -34,9 +29,8 @@ router.get(
   }
 );
 
-router.post(
-  "/",
-  validatorHandler(createCategorySchema, "body"),
+router.post('/',
+  validatorHandler(createCategorySchema, 'body'),
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -48,10 +42,9 @@ router.post(
   }
 );
 
-router.patch(
-  "/:id",
-  validatorHandler(getCategorySchema, "params"),
-  validatorHandler(updateCategorySchema, "body"),
+router.patch('/:id',
+  validatorHandler(getCategorySchema, 'params'),
+  validatorHandler(updateCategorySchema, 'body'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -64,14 +57,13 @@ router.patch(
   }
 );
 
-router.delete(
-  "/:id",
-  validatorHandler(getCategorySchema, "params"),
+router.delete('/:id',
+  validatorHandler(getCategorySchema, 'params'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
       await service.delete(id);
-      res.status(201).json({ id });
+      res.status(201).json({id});
     } catch (error) {
       next(error);
     }
