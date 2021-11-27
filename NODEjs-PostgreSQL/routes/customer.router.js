@@ -33,7 +33,7 @@ router.post(
   }
 );
 
-router.patch(
+router.put(
   '/:id',
   validationHandler(getCustomerSchema, 'params'),
   validationHandler(updateCustomerSchema, 'body'),
