@@ -1,41 +1,24 @@
-const boom = require('@hapi/boom');
+const Joi = require('joi');
 
-const { models } = require('./../libs/sequelize');
+const id = Joi.number().integer();
+const customerId = Joi.number().integer();
+const orderId = Joi.number().integer();
+const productId = Joi.number().integer();
+const amount = Joi.number().integer().min(1);
 
-class OrderService {
-  constructor() {}
+const getOrderSchema = Joi.object({
+  id: id.required(),
+});
 
-  async create(data) {
-    const newOrder = await models.Order.create(data);
-    return newOrder;
-  }
+const createOrderSchema = Joi.object({
+  customerId: customerId.required(),
+});
 
-  async find() {
-    return [];
-  }
+const addItemsSchema = Joi.object({
+  orderId: orderId.required(),
+  productId: productId.required(),
+  amount: amount.required(),
+  customerId: customerId.required(),
+});
 
-  async findOne(id) {
-    const order = await models.Order.findByPk(id, {
-      include: [
-        {
-          association: 'customer',
-          include: ['user'],
-        },
-      ],
-    });
-    return order;
-  }
-
-  async update(id, changes) {
-    return {
-      id,
-      changes,
-    };
-  }
-
-  async delete(id) {
-    return { id };
-  }
-}
-
-module.exports = OrderService;
+module.exports = { getOrderSchema, createOrderSchema, addItemsSchema };

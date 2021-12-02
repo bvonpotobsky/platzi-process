@@ -1,6 +1,7 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const { CUSTOMER_TABLE } = require('./customer.model');
+const { OrderProduct } = require('./order-product.model');
 
 const ORDER_TABLE = 'orders';
 
@@ -34,6 +35,12 @@ class Order extends Model {
   static associate(models) {
     this.belongsTo(models.Customer, {
       as: 'customer',
+    });
+    this.belongsToMany(models.Product, {
+      through: OrderProduct,
+      as: 'items',
+      foreignKey: 'orderId',
+      otherKey: 'productId',
     });
   }
 
