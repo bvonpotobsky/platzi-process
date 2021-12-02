@@ -1,7 +1,5 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
-
 const { CUSTOMER_TABLE } = require('./customer.model');
-const { OrderProduct } = require('./order-product.model');
 
 const ORDER_TABLE = 'orders';
 
@@ -37,8 +35,8 @@ class Order extends Model {
       as: 'customer',
     });
     this.belongsToMany(models.Product, {
-      through: OrderProduct,
       as: 'items',
+      through: models.OrderProduct,
       foreignKey: 'orderId',
       otherKey: 'productId',
     });

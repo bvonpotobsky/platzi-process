@@ -18,21 +18,20 @@ const OrderProductSchema = {
     field: 'created_at',
     defaultValue: Sequelize.NOW,
   },
+  amount: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
+  },
   orderId: {
     field: 'order_id',
     allowNull: false,
     type: DataTypes.INTEGER,
-    unique: true,
     references: {
       model: ORDER_TABLE,
       key: 'id',
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL',
-  },
-  amount: {
-    allowNull: false,
-    type: DataTypes.INTEGER,
   },
   productId: {
     field: 'product_id',
