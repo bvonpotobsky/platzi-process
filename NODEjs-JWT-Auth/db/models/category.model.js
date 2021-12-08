@@ -7,7 +7,7 @@ const CategorySchema = {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
   name: {
     type: DataTypes.STRING,
@@ -24,15 +24,13 @@ const CategorySchema = {
     field: 'created_at',
     defaultValue: Sequelize.NOW,
   },
-}
-
+};
 
 class Category extends Model {
-
   static associate(models) {
     this.hasMany(models.Product, {
       as: 'products',
-      foreignKey: 'categoryId'
+      foreignKey: 'categoryId',
     });
   }
 
@@ -41,8 +39,8 @@ class Category extends Model {
       sequelize,
       tableName: CATEGORY_TABLE,
       modelName: 'Category',
-      timestamps: false
-    }
+      timestamps: false,
+    };
   }
 }
 

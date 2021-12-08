@@ -3,12 +3,12 @@ const { Pool } = require('pg');
 const { config } = require('./../config/config');
 
 const options = {
-  connectionString: config.dbUrl
+  connectionString: config.dbUrl,
 };
 
 if (config.isProd) {
-  options.ssl =  {
-    rejectUnauthorized: false
+  options.ssl = {
+    rejectUnauthorized: false,
   };
 }
 

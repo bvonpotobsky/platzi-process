@@ -5,12 +5,12 @@ const { PRODUCT_TABLE } = require('./product.model');
 
 const ORDER_PRODUCT_TABLE = 'orders_products';
 
-const OrderProductSchema =  {
+const OrderProductSchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
   createdAt: {
     allowNull: false,
@@ -20,7 +20,7 @@ const OrderProductSchema =  {
   },
   amount: {
     allowNull: false,
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
   orderId: {
     field: 'order_id',
@@ -28,10 +28,10 @@ const OrderProductSchema =  {
     type: DataTypes.INTEGER,
     references: {
       model: ORDER_TABLE,
-      key: 'id'
+      key: 'id',
     },
     onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
+    onDelete: 'SET NULL',
   },
   productId: {
     field: 'product_id',
@@ -39,15 +39,14 @@ const OrderProductSchema =  {
     type: DataTypes.INTEGER,
     references: {
       model: PRODUCT_TABLE,
-      key: 'id'
+      key: 'id',
     },
     onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
-  }
-}
+    onDelete: 'SET NULL',
+  },
+};
 
 class OrderProduct extends Model {
-
   static associate(models) {
     //
   }
@@ -57,8 +56,8 @@ class OrderProduct extends Model {
       sequelize,
       tableName: ORDER_PRODUCT_TABLE,
       modelName: 'OrderProduct',
-      timestamps: false
-    }
+      timestamps: false,
+    };
   }
 }
 

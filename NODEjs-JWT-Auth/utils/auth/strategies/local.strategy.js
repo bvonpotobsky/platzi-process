@@ -5,9 +5,10 @@ const bcrypt = require('bcrypt');
 const UserService = require('./../../../services/user.service');
 const service = new UserService();
 
-const LocalStrategy = new Strategy({
+const LocalStrategy = new Strategy(
+  {
     usernameField: 'email',
-    passwordField: 'password'
+    passwordField: 'password',
   },
   async (email, password, done) => {
     try {

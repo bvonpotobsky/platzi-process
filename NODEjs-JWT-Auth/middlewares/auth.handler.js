@@ -20,7 +20,6 @@ function checkAdminRole(req, res, next) {
   }
 }
 
-
 function checkRoles(...roles) {
   return (req, res, next) => {
     const user = req.user;
@@ -29,9 +28,7 @@ function checkRoles(...roles) {
     } else {
       next(boom.unauthorized());
     }
-  }
+  };
 }
 
-
-
-module.exports = { checkApiKey, checkAdminRole, checkRoles }
+module.exports = { checkApiKey, checkAdminRole, checkRoles };
