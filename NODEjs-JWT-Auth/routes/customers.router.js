@@ -11,7 +11,7 @@ const {
 const router = express.Router();
 const service = new CustomerService();
 
-router.get('/', async (req, res, next) => {
+router.get('/',  async (req, res, next) => {
   try {
     res.json(await service.find());
   } catch (error) {
@@ -19,12 +19,11 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.post(
-  '/',
+router.post('/',
   validationHandler(createCustomerSchema, 'body'),
   async (req, res, next) => {
     try {
-      const { body } = req;
+      const body = req.body;
       res.status(201).json(await service.create(body));
     } catch (error) {
       next(error);
@@ -32,14 +31,13 @@ router.post(
   }
 );
 
-router.patch(
-  '/:id',
+router.patch('/:id',
   validationHandler(getCustomerSchema, 'params'),
   validationHandler(updateCustomerSchema, 'body'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
-      const { body } = req;
+      const body = req.body;
       res.status(201).json(await service.update(id, body));
     } catch (error) {
       next(error);
@@ -47,8 +45,7 @@ router.patch(
   }
 );
 
-router.delete(
-  '/:id',
+router.delete('/:id',
   validationHandler(getCustomerSchema, 'params'),
   async (req, res, next) => {
     try {
