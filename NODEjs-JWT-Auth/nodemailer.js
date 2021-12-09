@@ -1,5 +1,7 @@
 const nodemailer = require('nodemailer');
 
+const { config } = require('./config/config');
+
 // async..await is not allowed in global scope, must use a wrapper
 async function sendMail() {
   // create reusable transporter object using the default SMTP transport
@@ -8,17 +10,17 @@ async function sendMail() {
     secure: true, // true for 465, false for other ports
     port: 465,
     auth: {
-      user: 'nicobytes.demo@gmail.com',
-      pass: 'dmlikrjugujjlugl',
+      user: config.nodemailerPassword,
+      pass: config.nodemailerPassword,
     },
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: 'nicobytes.demo@gmail.com', // sender address
-    to: 'santibytes.demo@gmail.com', // list of receivers
+    from: '"Benjamín von Potobsky" <bvonpotobsky@gmail.com>', // sender address
+    to: 'dev@bvonpotobsky.com', // list of receivers
     subject: 'Este es un nuevo correo', // Subject line
-    text: 'Hola santi', // plain text body
+    text: 'Hola Benjamín', // plain text body
     html: '<b>Hola santi</b>', // html body
   });
 
