@@ -9,7 +9,7 @@ mongo_uri= current_app.config['mongodb+srv://bvonpotobsky:admin1234@basics.ytni4
 
 # Este método se encarga de configurar la conexión con la base de datos
 def get_db():
-    client = MongoClient('mongodb+srv://bvonpotobsky:admin1234@basics.ytni4.mongodb.net')
+    client = MongoClient('API_URL')
     return client.platzi
 
 
