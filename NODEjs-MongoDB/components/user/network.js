@@ -1,7 +1,7 @@
 const express = require("express");
 
 const response = require("../../network/response");
-const { addUser } = require("./controller");
+const { addUser, getUsers } = require("./controller");
 const router = express.Router();
 
 router.post("/", (req, res) => {
@@ -11,6 +11,12 @@ router.post("/", (req, res) => {
     .then((data) => {
       response.success(req, res, data);
     })
+    .catch((e) => response.error(req, res, "Invalid data", 500));
+});
+
+router.get("/", (req, res) => {
+  getUsers()
+    .then((data) => response.success(req, res, data))
     .catch((e) => response.error(req, res, "Invalid data", 500));
 });
 

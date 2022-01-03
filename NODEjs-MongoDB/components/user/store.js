@@ -5,6 +5,12 @@ function addUser(user) {
   return myUser.save();
 }
 
+function getUsers() {
+  const users = Model.find();
+  return users;
+}
+
 module.exports = {
   add: addUser,
+  list: getUsers,
 };
