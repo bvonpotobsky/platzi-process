@@ -1,16 +1,15 @@
-const Model = require("./model");
+const Model = require('./model');
 
 function addUser(user) {
-  const myUser = new Model(user);
-  return myUser.save();
+    const myUser = new Model(user);
+    return myUser.save();
 }
 
-function getUsers() {
-  const users = Model.find();
-  return users;
+function listUsers() {
+    return Model.find();
 }
 
 module.exports = {
-  add: addUser,
-  list: getUsers,
-};
+    add: addUser,
+    list: listUsers,
+}
