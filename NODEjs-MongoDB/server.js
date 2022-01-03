@@ -1,5 +1,9 @@
 const express = require("express");
+const app = express();
+const server = require("http").Server(app);
+
 const bodyParser = require("body-parser");
+const socket = require("./socket");
 
 const db = require("./db");
 const { config } = require("./config/config");
@@ -9,16 +13,16 @@ const routes = require("./network/routes");
 
 db(dbURI);
 
-const app = express();
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+socket.connect(server);
 
 routes(app);
 
 app.use("/app", express.static("public"));
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
