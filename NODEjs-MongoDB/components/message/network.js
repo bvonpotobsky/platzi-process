@@ -3,10 +3,17 @@ const express = require("express");
 const router = express.Router();
 
 const response = require("../../network/response");
-const { addMessage, getMessages } = require("./controller");
+const {
+  addMessage,
+  getMessages,
+  updateMessage,
+  deleteMessage,
+} = require("./controller");
 
 router.get("/", (req, res) => {
-  getMessages()
+  const filterMessages = req.query.user || null;
+
+  getMessages(filterMessages)
     .then((messageList) => {
       response.success(req, res, messageList);
     })
@@ -23,10 +30,29 @@ router.post("/", (req, res) => {
     .catch((e) => {
       response.error(req, res, 400, "Información invalida");
     });
+});
 
-  if (req.query.error == "ok") {
-  } else {
-  }
+router.patch("/:id", (req, res) => {
+  const { id } = req.params;
+  const { message } = req.body;
+
+  updateMessage(id, message)
+    .then((data) => {
+      response.success(req, res, data);
+    })
+    .catch((e) => (res, req, 500, "Error interno"));
+});
+
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+
+  deleteMessage(id)
+    .then(() => {
+      response.success(req, res, `Usuario ${id} eliminado`);
+    })
+    .catch((e) => {
+      response.error(req, res, 500, "Error interno");
+    });
 });
 
 module.exports = router;
