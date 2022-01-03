@@ -1,8 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-// const router = require("./components/message/network");
+const db = require("./db");
+const { config } = require("./config/config");
+const dbURI = config.mongodbURI;
+
 const routes = require("./network/routes");
+
+db(dbURI);
 
 const app = express();
 
