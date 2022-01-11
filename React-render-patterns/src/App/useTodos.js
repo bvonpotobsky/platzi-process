@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocalStorage } from "../TodoContext/useLocalStorage";
+import { useLocalStorage } from "./useLocalStorage";
 
 function useTodos() {
   const {
