@@ -12,6 +12,7 @@ import { EmptyTodos } from "../EmptyTodos";
 import { TodoForm } from "../TodoForm";
 import { CreateTodoButton } from "../CreateTodoButton";
 import { Modal } from "../Modal";
+import { ChangeAlertWithStorageListener } from "../ChangeAlert";
 
 function App() {
   const {
@@ -27,21 +28,29 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
+    sincronizeTodos,
   } = useTodos();
 
   return (
     <React.Fragment>
-      <TodoHeader>
+      <TodoHeader loading={loading}>
         <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       </TodoHeader>
 
-      <TodoList>
-        {error && <TodosError />}
-        {loading && <TodosLoading />}
-        {!loading && !searchedTodos.length && <EmptyTodos />}
-
-        {searchedTodos.map((todo) => (
+      <TodoList
+        error={error}
+        loading={loading}
+        totalTodos={totalTodos}
+        searchText={searchValue}
+        searchedTodos={searchedTodos}
+        onError={() => <TodosError />}
+        onLoading={() => <TodosLoading />}
+        onEmpty={() => <EmptyTodos />}
+        onEmptySearchResults={(searchText) => (
+          <p>No hay resultados para {searchText} </p>
+        )}
+        render={(todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -49,7 +58,17 @@ function App() {
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />
-        ))}
+        )}
+      >
+        {/* {(todo) => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+          />
+        )} */}
       </TodoList>
 
       {!!openModal && (
@@ -59,6 +78,8 @@ function App() {
       )}
 
       <CreateTodoButton setOpenModal={setOpenModal} />
+
+      <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
     </React.Fragment>
   );
 }
