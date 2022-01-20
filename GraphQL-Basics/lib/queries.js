@@ -1,48 +1,64 @@
-const { ObjectId } = require("mongodb");
-
-const connectDB = require("./db");
+const connectDb = require("./db");
+const { ObjectID } = require("mongodb");
 
 module.exports = {
   getCourses: async () => {
-    let db,
-      courses = [];
+    let db;
+    let courses = [];
+
     try {
-      db = await connectDB();
-      courses = await db.collection("courses").find({}).toArray();
-      return courses;
-    } catch (err) {
-      console.error(err);
+      db = await connectDb();
+      courses = await db.collection("courses").find().toArray();
+    } catch (error) {
+      console.error(error);
     }
+
+    return courses;
   },
+
   getCourse: async (root, { id }) => {
-    let db, course;
+    let db;
+    let course;
+
     try {
-      db = await connectDB();
-      course = await db.collection("courses").findOne({ _id: ObjectId(id) });
-      return course;
-    } catch (err) {
-      console.error(err);
+      db = await connectDb();
+      course = await db.collection("courses").findOne({
+        _id: ObjectID(id),
+      });
+    } catch (error) {
+      console.error(error);
     }
+
+    return course;
   },
+
   getStudents: async () => {
-    let db,
-      students = [];
+    let db;
+    let students = [];
+
     try {
-      db = await connectDB();
-      students = await db.collection("students").find({}).toArray();
-      return students;
-    } catch (err) {
-      console.error(err);
+      db = await connectDb();
+      students = await db.collection("students").find().toArray();
+    } catch (error) {
+      console.error(error);
     }
+
+    return students;
   },
+
   getStudent: async (root, { id }) => {
-    let db, student;
+    let db;
+    let student;
+
     try {
-      db = await connectDB();
-      student = await db.collection("students").findOne({ _id: ObjectId(id) });
-      return student;
-    } catch (err) {
-      console.error(err);
+      db = await connectDb();
+      student = await db.collection("students").findOne({
+        _id: ObjectID(id),
+      });
+    } catch (error) {
+      console.error(error);
     }
+
+    return student;
   },
 };
