@@ -9,6 +9,8 @@ const {
   addPeople,
 } = require("./mutations");
 
+const { Course } = require("./types");
+
 module.exports = {
   Query: { getCourse, getCourses, getStudent, getStudents },
   Mutation: {
@@ -20,4 +22,5 @@ module.exports = {
     deleteCourse,
     addPeople,
   },
+  Course,
 };
