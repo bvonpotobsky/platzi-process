@@ -1,26 +1,19 @@
 import { ApolloServer } from 'apollo-server'
+import path from 'path'
+import { readFileSync } from 'fs'
+import resolvers from './resolvers'
+import { PrismaClient } from '@prisma/client'
 
-// 1 - query
-const typeDefs = `
-  type Query {
-    info: String!
-  }
-`
+const orm = new PrismaClient()
 
-// 2 - resolvers
-const resolvers = {
-  Query: {
-    info: () => `This is the API of Platzi Node GraphQL`,
-  },
-}
-
-// 3 - Iniciar servidor
+const typeDefs = readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8')
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: {
+    orm,
+  },
 })
 
-server.listen().then(({ url }) => {
-  console.log(`Server is running on ${url}`)
-})
+server.listen().then(({ url }) => console.log(`Server is running on ${url}`))

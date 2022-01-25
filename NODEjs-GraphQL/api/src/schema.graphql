@@ -1,13 +1,13 @@
 scalar DateTime
 
 type Query {
-  avos: [Avocado]!
+  # avos: [Avocado]!
   avo(id: ID!): Avocado
 }
 
-type Mutation {
-  createAvo(data: AvoCreateInput!): Avocado!
-}
+# type Mutation {
+#   createAvo(data: AvoCreateInput!): Avocado!
+# }
 
 interface BaseModel {
   id: ID!
@@ -38,7 +38,6 @@ type Avocado implements BaseModel {
 
 input AvoCreateInput {
   name: String!
-  sku: String!
   price: Float!
   image: String!
   description: String
