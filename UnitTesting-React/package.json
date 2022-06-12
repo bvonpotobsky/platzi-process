@@ -23,7 +23,7 @@
     "React-router",
     "Redux"
   ],
-  "author": "Oscar Barajas <oscar@arepa.dev>",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.7.2",
@@ -61,5 +61,14 @@
   "bugs": {
     "url": "https://github.com/gndx/platzi-store/issues"
   },
-  "homepage": "https://github.com/gndx/platzi-store/#readme"
+  "homepage": "https://github.com/gndx/platzi-store/#readme",
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__test__/setupTest.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(styl|css)$": "<rootDir>/src/__mocks__/styleMock.js"
+    },
+    "testEnvironment": "jsdom"
+  }
 }
